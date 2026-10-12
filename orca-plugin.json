@@ -1,0 +1,28 @@
+{
+  "manifestVersion": 1,
+  "id": "copy-env",
+  "publisher": "heartheyouth",
+  "name": "Copy .env",
+  "version": "0.1.0",
+  "description": "Copies the main checkout's .env file into every new Orca worktree.",
+  "engines": {
+    "orca": ">=1.4.0"
+  },
+  "pluginApi": 1,
+  "main": "main.mjs",
+  "contributes": {
+    "events": [
+      {
+        "on": "worktree.created"
+      }
+    ]
+  },
+  "capabilities": [
+    {
+      "kind": "notifications:show"
+    },
+    {
+      "kind": "events:subscribe"
+    }
+  ]
+}
