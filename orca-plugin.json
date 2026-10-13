@@ -1,16 +1,24 @@
 {
   "manifestVersion": 1,
-  "id": "copy-env",
+  "id": "autocopy",
   "publisher": "heartheyouth",
-  "name": "Copy .env",
-  "version": "0.1.0",
-  "description": "Copies the main checkout's .env file into every new Orca worktree.",
+  "name": "Autocopy",
+  "version": "0.2.0",
+  "description": "Copies files like .env from the main checkout into every new Orca worktree. Choose the files in ~/.config/autocopy/files.",
+  "icon": "icon.svg",
   "engines": {
     "orca": ">=1.4.0"
   },
   "pluginApi": 1,
   "main": "main.mjs",
   "contributes": {
+    "commands": [
+      {
+        "id": "edit-files",
+        "title": "Autocopy: Edit files to copy",
+        "context": "global"
+      }
+    ],
     "events": [
       {
         "on": "worktree.created"
